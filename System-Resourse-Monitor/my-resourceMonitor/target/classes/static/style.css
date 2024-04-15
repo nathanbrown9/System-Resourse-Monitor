@@ -1,0 +1,202 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    
+    
+    
+}
+
+body
+{
+    min-height: 100vh;
+    background-image: url(technology.jpg);
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+   
+}
+
+header
+{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid azure;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+}
+
+header .title
+{
+    color: azure;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+header ul
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header ul li
+{
+    list-style: none;
+    margin-left: 20px;
+}
+
+header ul li a
+{
+    text-decoration: none;
+    padding: 6px 15px;
+    color: azure;
+    border-radius: 20px;
+}
+
+header ul li a:hover,
+header ul li a.active
+{
+    background: azure;
+    color: blue;
+}
+
+.binary_numbers img
+{
+    width: 30px;
+    animation: bubble 7s linear infinite;
+
+}
+
+.binary_numbers
+{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    bottom: -70px;
+
+}
+
+@keyframes bubble
+{
+    0%
+    {
+        transform: translateY(0);
+        opacity: 0;
+    }
+
+    50%
+    {
+       
+        opacity: 1;
+    }
+
+    70%
+    {
+        
+        opacity: 1;
+    }
+
+    100%
+    {
+        transform: translateY(-80vh);
+        opacity: 0;
+    }
+}
+
+.binary_numbers img:nth-child(1)
+{
+    animation-delay: 2s;
+    width: 25px;
+}
+.binary_numbers img:nth-child(2)
+{
+    animation-delay: 1s;
+}
+.binary_numbers img:nth-child(3)
+{
+    animation-delay: 3s;
+}
+.binary_numbers img:nth-child(4)
+{
+    animation-delay: 4.5s;
+}
+.binary_numbers img:nth-child(5)
+{
+    animation-delay: 3s;
+}
+.binary_numbers img:nth-child(6)
+{
+    width: 20px;
+    animation-delay: 6s;
+}
+.binary_numbers img:nth-child(7)
+{
+    width: 35px;
+    animation-delay: 7s;
+}
+.binary_numbers img:nth-child(8)
+{
+    animation-delay: 5s;
+}
+.binary_numbers img:nth-child(9)
+{
+    animation-delay: 8s;
+}
+.binary_numbers img:nth-child(10)
+{
+    animation-delay: 4s;
+}
+.binary_numbers img:nth-child(11)
+{
+    animation-delay: 5.5s;
+}
+.binary_numbers img:nth-child(12)
+{
+    animation-delay: 8s;
+}
+.binary_numbers img:nth-child(13)
+{
+    animation-delay: 7.5s;
+}
+.binary_numbers img:nth-child(14)
+{
+    animation-delay: 9s;
+}
+.binary_numbers img:nth-child(15)
+{
+    animation-delay: 6.5s;
+}
+.binary_numbers img:nth-child(16)
+{
+    animation-delay: 8.5s;
+}
+
+
+/* -----------CPU USAGE ---------- */
+
+.cpu_usage
+{
+    position: relative;
+    padding: 100px;
+    color: azure;
+
+}
+

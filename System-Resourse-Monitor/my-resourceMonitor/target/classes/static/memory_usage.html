@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Resource Monitor</title>
+    <link rel="stylesheet" href="mu_style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header>
+        <a href="page.html" class="title">System Resource Monitor</a>
+        <ul>
+            <li><a href="page.html">Home</a></li>
+            <li><a href="cpu_usage.html">CPU Usage</a></li>
+            <li><a href="memory_usage.html"class="active">Memory Usage</a></li>
+            <li><a href="disk_usage.html">Disk Usage</a></li>
+        </ul>
+    </header>
+
+    <div class="main">
+        <div class="button">
+            <div class="content">
+                <span class="button-text">Start Monitoring</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const button = document.querySelector(".button"),
+              text = document.querySelector(".button-text");
+
+        button.addEventListener("click", () => {
+            // Add loading message while fetching data
+            text.innerText = "Fetching Memory Usage...";
+
+            // Fetch CPU usage data from backend
+            fetch("/memory-usage-click", { method: 'POST' })
+                .then(response => response.json())
+                .then(data => {
+                    // Extract CPU usage information from the response
+                    const memoryUsage = data;
+
+                    // Update button text to display CPU usage
+                    text.innerText = "Available Memory: " + memoryUsage[0] + "B" + "\nAllocated Memory: " + memoryUsage[1] + "B";
+                })
+                .catch(error => {
+                    // Display error message if fetch fails
+                    text.innerText = "Error Fetching Memory Usage";
+                    console.error("Error Fetching Memory usage:", error);
+                });
+        });
+    </script>
+</body>
+</html>
