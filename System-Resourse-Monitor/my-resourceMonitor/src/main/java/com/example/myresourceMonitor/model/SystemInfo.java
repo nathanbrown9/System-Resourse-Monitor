@@ -16,34 +16,40 @@ import java.util.*;
 public class SystemInfo {
 
     // creating instance of the operating system to access information
-    // this 
     public static OperatingSystemMXBean osInfo = (OperatingSystemMXBean) ManagementFactory.getOperatingSystemMXBean();
 
     
-
+    // this funciton is wrong
     public static String getSystemLoadAverage() {
         double returned = osInfo.getSystemLoadAverage();
         String output = Double.toString(returned);
         return output;
     }
 
+    // this function returns the percentage of time that CPU is used
+    // using this to see how CPU is working
     public static double getProcessCpuLoad() {
         return osInfo.getCpuLoad();
     }
 
+    // this function returns in Bytes, the Free memory
+    // converting into a string and return string value of the free memory
     public static String getFreeMemory() {
         long freemem = osInfo.getFreeMemorySize();
         String str = Long.toString(freemem);
         return str;
     }
 
+    // this function returns in Bytes, the allocated memory
+    // converting to string and return string value of allocated memory
     public static String getAllocatedMemory(){
         long allocmem = osInfo.getCommittedVirtualMemorySize();
         String str = Long.toString(allocmem);
         return str;
     }
 
-    // correct
+    // this function calls on the Free memory and Allocated memory 
+    // returning array of both free and allocated to display both
     public static String[] getMemory(){
         String[] returnMem = new String[2];
         returnMem[0] = getFreeMemory();
@@ -51,6 +57,7 @@ public class SystemInfo {
         return returnMem;
     }
 
+    // idk if we should change this
     public static String getNetworkIncoming() throws SocketException {
         Enumeration<NetworkInterface> bandwidth = NetworkInterface.getNetworkInterfaces();
         NetworkInterface element = bandwidth.nextElement();
