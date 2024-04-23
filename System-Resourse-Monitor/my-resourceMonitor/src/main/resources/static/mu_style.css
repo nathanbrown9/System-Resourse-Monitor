@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300,400,700,900&display=swap");
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+body
+{
+    min-height: 100vh;
+    background-image: url(technology.jpg);
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+   
+}
+
+header
+{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid azure;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+}
+
+header .title
+{
+    color: azure;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+header ul
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header ul li
+{
+    list-style: none;
+    margin-left: 20px;
+}
+
+header ul li a
+{
+    text-decoration: none;
+    padding: 6px 15px;
+    color: azure;
+    border-radius: 20px;
+}
+
+header ul li a:hover,
+header ul li a.active
+{
+    background: azure;
+    color: blue;
+}
+
+.main
+{
+    
+   
+    color: azure;
+    padding: 400px 100px;
+}
+
+.title
+{
+    font-size: 60px;
+}
+
+.button
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 150px;
+    width: 500px;
+    background: blue;
+    border-radius: 55px;
+    box-shadow: 0 5px 10px black;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    cursor: pointer;
+
+
+}
+
+/* .button.active 
+{
+    height: 20px;
+    width: 500px;
+
+}*/
+
+.buton::before
+{
+    content: '';
+    position: absolute;
+    left: -10%;
+    height: 100%;
+    width: 100%;
+    border-radius: 55px;
+    background: rgb(96, 96, 214);
+
+}
+
+.button.active::before
+{
+    animation: layer 6s ease-in-out forwards;
+}
+
+@keyframes layer
+{
+    100%{
+    left: 0%;
+    }
+}
+
+
+.button .content
+{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.content i,
+.content .button-text
+{
+    color: azure;
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.content .button-text
+{
+    font-size: 3.2vh;
+    margin-left: 8px;
+}
